@@ -1,0 +1,60 @@
+---
+
+### **Hackathon de Hoy – Proyecto Completo (1 día)**
+
+**Objetivo:** Hacer un proyecto completo que puedas subir a tu GitHub, practicando **FastAPI (backend)** y **frontend básico con HTML/CSS/JS**.
+El proyecto va a ser **un Mini Marketplace de Ropa de Segunda Mano**, porque ya habías mostrado interés en algo así, y es completo: usuarios, productos, carrito y búsqueda.
+
+---
+
+### **Plan del Hackathon**
+
+#### **1️⃣ Backend (FastAPI)**
+
+* **Base de datos:** SQLite (simple y rápido para probar)
+* **Modelos principales:**
+
+  * Usuario (id, nombre, email, contraseña)
+  * Producto (id, nombre, descripción, precio, estado: nuevo/usado)
+  * Carrito (id, usuario\_id, productos\[])
+* **Rutas:**
+
+  * `/register` – registrar usuario
+  * `/login` – login
+  * `/products` – listar productos
+  * `/products/add` – agregar producto
+  * `/cart` – ver carrito
+  * `/cart/add` – agregar producto al carrito
+
+---
+
+#### **2️ Frontend (HTML/CSS/JS)**
+
+* **Páginas:**
+
+  * Login / Registro
+  * Página principal (lista de productos con filtros)
+  * Página de carrito
+  * Página para agregar productos (solo admin)
+* **Funcionalidades:**
+
+  * Buscar productos por nombre
+  * Filtrar por estado (nuevo/usado)
+  * Agregar al carrito y mostrar total
+
+---
+
+#### **3️ Organización por pasos**
+
+1. Configurar proyecto FastAPI + SQLite
+2. Crear modelos y migraciones
+3. Crear rutas de usuarios y autenticación
+4. Crear rutas de productos y carrito
+5. Hacer frontend básico y conectar con backend usando fetch
+6. Probar todo y subir a GitHub
+
+---
+
+Si quieres, puedo **empezar ya haciendo la estructura inicial del proyecto FastAPI con todas las rutas y modelos listos**, y luego vamos agregando frontend paso a paso hasta tener el mini marketplace completo hoy mismo.
+
+¿Quieres que haga eso ahora?
