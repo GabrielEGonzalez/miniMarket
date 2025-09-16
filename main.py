@@ -1,0 +1,15 @@
+from fastapi import FastAPI
+from db import engine
+from router import Usuario, Carrito, Producto
+from sqlmodel import SQLModel
+
+
+app = FastAPI()
+
+#crear tablas
+@app.on_event("startup")
+def on_startup():
+    SQLModel.metadata.create_all(engine)
+
+
+app.include_router(Usuario.userRouter)
