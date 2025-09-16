@@ -1,15 +1,20 @@
 from fastapi import APIRouter, Depends, Response, status
-from sqlmodel import Field, SQLModel, create_engine, Session, select
-from ..db import get_session
+from sqlmodel import Field, SQLModel, create_engine, Session, select , Field
+from db import get_session
+from .Producto import Producto
+from pydantic import BaseModel
+from typing import List
 
 class Carrito(SQLModel, table=True):
-    id: int | None = Field(defaul=None,primary_key=True)
+    id: int | None = Field(default=None,primary_key=True)
     usuario_id: int 
     producto_id: int
 
 
-class Carritoread(Carrito):
-    productos: list[Producto]
+class Carritoread(BaseModel):
+    id:int
+    usuario_id:int
+    productos: List[Producto] = []
 
 
 cardRouter = APIRouter(prefix="/product",tags=["product"])

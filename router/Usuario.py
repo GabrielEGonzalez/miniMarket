@@ -5,11 +5,11 @@
 """
 
 from fastapi import APIRouter, Depends
-from sqlmodel import SQLModel , Session , select
-from ..db import get_session
+from sqlmodel import SQLModel , Session , select , Field
+from db import get_session
 
-class Usuario(SQLModel,echo=True):
-    id = int | None = Field(defaul=none,primary_key=True)
+class Usuario(SQLModel,table=True):
+    id : int | None = Field(default=None,primary_key=True)
     nombre: str
     email: str
     password: str
