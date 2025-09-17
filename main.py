@@ -13,3 +13,4 @@ def on_startup():
 
 
 app.include_router(Usuario.userRouter)
+app.include_router(Carrito.cardRouter)
