@@ -1,6 +1,5 @@
-from sqlmodel import SQLModel, create_engine , Session
-
-baseUrl = ""
+from sqlmodel import create_engine, Session
+baseUrl = "sqlite:///miniMarket.db"
 
 engine = create_engine(baseUrl,echo=True)
 
