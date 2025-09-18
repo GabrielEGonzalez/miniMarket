@@ -31,5 +31,12 @@ async def RegisterUser(usuario: Usuario,session:Session = Depends(get_session)):
         return {"error":str(e)}
 
 @userRouter.post("/login")
-async def loginUser():
-    pass
+async def loginUser(usuariologin: Usuario, session:Session=Depends(get_session)):
+    try:
+        user = session.exec(select(Usuario).where(Usuario.id==usuariologin.id))
+        if user:
+            return user
+        else:
+            return {"text":"usuario no existen en los registro"}
+    except Exception as e:
+        return {"error":str(e)}
