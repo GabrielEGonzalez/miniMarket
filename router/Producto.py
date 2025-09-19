@@ -29,7 +29,7 @@ async def listaProducto(session: Session = Depends(get_session)):
     
 
 @routerProducto.post("/add")
-async def addProducto(secret_key = Cookie(),producto:Producto,session : Session = Depends(get_session)):
+async def addProducto(producto:Producto,secret_key = Cookie(),session : Session = Depends(get_session)):
     
     key = secret_key.split("&")
     user = session.exec(select(Usuario).where(Usuario.email == key[0])).first()
@@ -40,14 +40,7 @@ async def addProducto(secret_key = Cookie(),producto:Producto,session : Session 
         session.refresh(producto)
     else:
         raise HTTPException(
-            status_code=404
+            status_code=404,
             detail={"error":"rol del usuario no permite la accion"}
         )
      
-    
-
-
-"""
-  * `/products` – listar productos
-  * `/products/add` – agregar producto
-"""
