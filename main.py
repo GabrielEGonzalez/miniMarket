@@ -2,17 +2,18 @@ from fastapi import FastAPI
 from db import engine
 from router import Usuario, Carrito, Producto
 from sqlmodel import SQLModel
+from fastapi.middleware.cors import CORSMiddleware
 
 
 app = FastAPI()
 
-#app.add_middleware(
- #   CORSMiddleware,
-  #  allow_origins=origins,
-   #  allow_credentials=True,
-    # allow_methods=["*"],
-    # allow_headers=["*"],
-#)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 #crear tablas
 @app.on_event("startup")
