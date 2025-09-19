@@ -19,7 +19,11 @@ class Usuario(SQLModel,table=True):
 userRouter = APIRouter(prefix="/user", tags=["user"])
 
 @userRouter.post("/register",response_model=Usuario)
-async def RegisterUser(usuario: Usuario,session:Session = Depends(get_session),response:Response):
+async def RegisterUser(
+                    usuario: Usuario,
+                    response: Response,
+                    session:Session = Depends(get_session)
+):
     
     try:
         userdb = Usuario.model_validate(usuario)
@@ -33,7 +37,11 @@ async def RegisterUser(usuario: Usuario,session:Session = Depends(get_session),r
         return {"error":str(e)}
 
 @userRouter.post("/login")
-async def loginUser(usuariologin: Usuario, session:Session=Depends(get_session,response:Response):
+async def loginUser(
+    usuariologin: Usuario, 
+    response: Response, 
+    session:Session=Depends(get_session)
+):
     try:
         user = session.exec(select(Usuario).where(Usuario.id==usuariologin.id)).first()
         if user:
