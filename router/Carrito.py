@@ -17,7 +17,7 @@ class Carritoread(BaseModel):
     productos: List[Producto] = []
 
 
-cardRouter = APIRouter(prefix="/product",tags=["product"])
+cardRouter = APIRouter(prefix="/Car",tags=["car"])
 # /cart  ver carrito
 # /cart/add  agregar producto al carrito
 @cardRouter.get("/getProduct/{id_user}",response_model=list[Carritoread],status_code=status.HTTP_200_OK)
