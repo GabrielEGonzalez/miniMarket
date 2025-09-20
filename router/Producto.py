@@ -43,4 +43,3 @@ async def addProducto(producto:Producto,secret_key = Cookie(),session : Session 
             status_code=404,
             detail={"error":"rol del usuario no permite la accion"}
         )
-     
