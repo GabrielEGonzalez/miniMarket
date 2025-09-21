@@ -43,7 +43,7 @@ async def loginUser(
     session:Session=Depends(get_session)
 ):
     try:
-        user = session.exec(select(Usuario).where(Usuario.id==usuariologin.id)).first()
+        user = session.exec(select(Usuario).where(Usuario.email==usuariologin.email)).first()
         if user:
             secret = f"{user.email}&{user.rol}"
             response.set_cookie(key="secret_key",value=secret)
