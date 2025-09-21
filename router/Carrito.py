@@ -31,7 +31,6 @@ async def getCard(id_user: int, session: Session = Depends(get_session)):
             x = session.exec(select(Producto).where(Producto.id == card.producto_id)).first()
             if x:
                 listaProducto.append(Carritoread(id=card.id,usuario_id= card.usuario_id, productos = [x]))
-  
         return listaProducto
     except Exception as e:
         return {"error": str(e)}
