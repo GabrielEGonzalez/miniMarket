@@ -27,7 +27,7 @@ async def RegisterUser(
     
     try:
         userdb = Usuario.model_validate(usuario)
-        secret=f"{usuario.email}&{usuario.rol}"
+        secret=f"{usuario.id}&{usuario.email}&{usuario.rol}"
         session.add(userdb)
         session.commit()
         session.refresh(userdb)
@@ -45,7 +45,7 @@ async def loginUser(
     try:
         user = session.exec(select(Usuario).where(Usuario.email==usuariologin.email)).first()
         if user:
-            secret = f"{user.email}&{user.rol}"
+            secret = f"{user.id}&{user.email}&{user.rol}"
             response.set_cookie(key="secret_key",value=secret)
             return user
         else:
