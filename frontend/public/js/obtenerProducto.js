@@ -21,10 +21,28 @@ window.onload = function () {
             div3.classList.add("footer-card");
 
             button.textContent = "Add to Cart"
+            button.dataset.id = producto.id
             h2.textContent = producto.nombre;
             p.textContent= producto.descripcion;
             h2precio.textContent = "$"+ producto.precio;
 
+            button.addEventListener("click",()=>{
+
+                
+                fetch("http://127.0.0.1:8000/Carrito/add/producto",{
+                    method: "",
+                    headers: {"Content-Type":"application/json"},
+                    body: JSON.stringify({
+
+                    })
+                }).then(
+                    res => res.json()
+                ).then(
+                    resp => console.log(resp)
+                ).catch(
+                    err = console.error("error:",error)
+                )
+            });
             div3.appendChild(h2precio);
             div3.appendChild(button);
             div2.appendChild(img)
