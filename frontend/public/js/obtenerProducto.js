@@ -26,8 +26,7 @@ window.onload = function () {
             p.textContent= producto.descripcion;
             h2precio.textContent = "$"+ producto.precio;
 
-            button.addEventListener("click",()=>{
-
+            button.addEventListener("click",function(){
                 let id_prod = this.dataset.id;
                 let secret = getCookie("secret_key");
                 let id_user;
