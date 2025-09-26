@@ -28,12 +28,19 @@ window.onload = function () {
 
             button.addEventListener("click",()=>{
 
-                
+                let id_prod = this.dataset.id;
+                let secret = getCookie("secret_key");
+                let id_user;
+                if (secret) {
+                    let [id,email,rol] = secret.split("&");
+                    id_user = id;
+                }
                 fetch("http://127.0.0.1:8000/Carrito/add/producto",{
                     method: "",
                     headers: {"Content-Type":"application/json"},
                     body: JSON.stringify({
-
+                        usuario_id: id_user,
+                        producto_id: id_prod
                     })
                 }).then(
                     res => res.json()
