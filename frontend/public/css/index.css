@@ -10,15 +10,16 @@ body {
 }
 
 header {
-    color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    color: #44c00aa9;
     padding: 15px;
-    background-color: #33A100;
 }
 
 .head {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    align-content: center;
 }
 
 .head h1, .head p {
@@ -27,7 +28,7 @@ header {
 }
 
 .head p {
-    color: rgba(224, 224, 224, 0.781);
+    color: #72a05c;
 }
 
 .regis a {
@@ -46,13 +47,15 @@ header {
 }
 
 .busqueda input[type="search"] {
-    border: 1px solid rgb(255, 255, 255);
+    border: 1px solid #3f881d;
     padding: 10px 50px;
     border-radius: 10px 0 0 10px;
 }
 
 .busqueda input[type="button"] {
-    border: 1px solid rgb(255, 255, 255);
+    background-color: #133D00;
+    color:rgb(250, 250, 250);
+    border: 1px solid #3f881d;
     padding: 10px 10px;
     border-radius: 0 10px 10px 0;
     transition: background-color 0.3s ease;
@@ -78,11 +81,14 @@ li {
 
 a {
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: #3f881d;
 }
-
+a:hover{
+    color: #133D00;
+}
 li:hover {
-    background-color: #3f881d;
+    
+    background-color: #72a05c;
 }
 
 #contenedor {
