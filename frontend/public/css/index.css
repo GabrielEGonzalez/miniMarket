@@ -10,7 +10,7 @@ body {
 }
 
 header {
-    background-color: rgb(255, 255, 255);
+    /*background-color: rgb(255, 255, 255);*/
     color: #44c00aa9;
     padding: 15px;
 }
@@ -203,7 +203,13 @@ li:hover {
     transform: scale(1.05);
 }
 
+.banner-img{
+    object-fit: contain;
+}
 
+.banner-img img{
+    height: 100%;
+}
 footer{
     height: 300px;
     background-color: #72a05c;
