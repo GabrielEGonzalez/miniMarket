@@ -17,13 +17,13 @@ class ProductoRead(SQLModel):
 
 routerProducto = APIRouter(prefix="/producto",tags=["product"])
 
-@routerProducto.get("/")#,response_model=List[Producto]
+@routerProducto.get("/")#response_model=List[Producto]
 async def listaProducto(session: Session = Depends(get_session)):
     try:
         listaproducto = session.exec(select(Producto)).all()
         if listaproducto:
             return listaproducto
-        return {"mensaje":"prodcutos no extitente en la base de datos."}
+        return {"mensaje":"productos no extitente en la base de datos."}
     except Exception as e:
         return {"error":str(e)}
     
@@ -32,7 +32,7 @@ async def listaProducto(session: Session = Depends(get_session)):
 async def addProducto(producto:Producto,secret_key = Cookie(),session : Session = Depends(get_session)):
     
     key = secret_key.split("&")
-    user = session.exec(select(Usuario).where(Usuario.email == key[0])).first()
+    user = session.exec(select(Usuario).where(Usuario.email == key[1])).first()
     
     if user.rol == "admin":
         session.add(producto)

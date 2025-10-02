@@ -1,7 +1,7 @@
 """  
 * Usuario (id, nombre, email, contraseña)
-* `/register` – registrar usuario
-* `/login` – login
+* `/register`  registrar usuario
+* `/login`  login
 """
 
 from fastapi import APIRouter, Depends , Response
