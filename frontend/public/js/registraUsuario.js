@@ -6,14 +6,16 @@ buttonResg.addEventListener("click",function(){
     let inputEmail = document.getElementById("email");
     let inputPass = document.getElementById("password");
 
-    fetch("",{
+    fetch("http://127.0.0.1:8000/user/register",{
         method:"POST",
-        headers:"",
+        headers:{"Content-Type":"application/json"},
         body: JSON.stringify({
             nombre:inputNombre.value,
             email:inputEmail.value,
             password:inputPass.value,
             rol:"user"
         })
-    }).then(res => res.json()).then().catch();
+    }).then(res => res.json())
+    .then(resp =>{console.log(resp);})
+    .catch(error => console.log(error));
 });
