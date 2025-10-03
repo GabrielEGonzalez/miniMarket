@@ -44,11 +44,16 @@ window.onload = function () {
                 }).then(
                     res => res.json()
                 ).then(
-                    resp => console.log(resp)
+                    resp => {
+                        if(resp){
+                        
+                        }
+                    }
                 ).catch(
                     err = console.error("error:",error)
                 )
             });
+
             div3.appendChild(h2precio);
             div3.appendChild(button);
             div2.appendChild(img)
