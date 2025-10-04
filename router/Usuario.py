@@ -31,7 +31,10 @@ async def RegisterUser(
         session.add(userdb)
         session.commit()
         session.refresh(userdb)
-        response.set_cookie(key="secret_key",value=secret)
+        response.set_cookie(key="secret_key",value=secret,httponly=True,
+        secure=False,
+        samesite="None"
+        )
         return userdb
     except Exception as e :
         return {"error":str(e)}
@@ -46,7 +49,9 @@ async def loginUser(
         user = session.exec(select(Usuario).where(Usuario.email==usuariologin.email)).first()
         if user:
             secret = f"{user.id}&{user.email}&{user.rol}"
-            response.set_cookie(key="secret_key",value=secret)
+            response.set_cookie(key="secret_key",value=secret,httponly=True,
+            secure=False,  
+            samesite="None")
             return user
         else:
             return {"text":"usuario no existen en los registro"}
