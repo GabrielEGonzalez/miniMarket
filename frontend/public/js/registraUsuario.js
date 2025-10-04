@@ -9,6 +9,7 @@ buttonResg.addEventListener("click",function(){
     fetch("http://127.0.0.1:8000/user/register",{
         method:"POST",
         headers:{"Content-Type":"application/json"},
+        credentials: "include",
         body: JSON.stringify({
             nombre:inputNombre.value,
             email:inputEmail.value,
