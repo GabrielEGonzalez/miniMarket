@@ -214,3 +214,46 @@ footer{
     height: 300px;
     background-color: #72a05c;
 }
+
+
+/* details*/
+#comentario{
+    margin: 15px 30px;
+}
+#comentario div{
+    padding: 10px 0;
+}
+
+details {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+details[open] {
+  background: #fff8e1;
+}
+
+summary {
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: "▶";
+  transition: transform 0.3s ease;
+}
+
+details[open] summary::after {
+  transform: rotate(90deg);
+}
