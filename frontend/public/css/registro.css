@@ -63,6 +63,7 @@ body {
 }
 
 form {
+  background-color: #ffffff;
   width: 100%;
   max-width: 400px;
   padding: 30px;
@@ -76,7 +77,7 @@ form {
 form h1 {
   text-align: center;
   margin-bottom: 10px;
-  color: #3f881d;
+  color: #3c9712;
 }
 
 /* Campos de entrada */
@@ -90,7 +91,7 @@ input[type="email"],
 input[type="password"] {
   width: 100%;
   padding: 10px;
-  border: 2px solid #cde3c1;
+  border: 2px solid #539e2b;
   border-radius: 8px;
   font-size: 1rem;
   outline: none;
@@ -104,7 +105,7 @@ input:focus {
 
 /* Botón */
 input[type="submit"] {
-  background-color: #3f881d;
+  background-color: #337913;
   color: #fff;
   font-size: 1.1rem;
   font-weight: bold;
@@ -116,6 +117,6 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #72a05c;
+  background-color: #609448;
   transform: scale(1.03);
 }
