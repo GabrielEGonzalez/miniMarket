@@ -10,10 +10,10 @@ from db import get_session
 
 class Usuario(SQLModel,table=True):
     id : int | None = Field(default=None,primary_key=True)
-    nombre: str
-    email: str
-    password: str
-    rol:str
+    nombre: str | None = None
+    email: str | None = None
+    password: str | None = None
+    rol:str | None = None
 
 
 userRouter = APIRouter(prefix="/user", tags=["user"])
@@ -27,10 +27,11 @@ async def RegisterUser(
     
     try:
         userdb = Usuario.model_validate(usuario)
-        secret=f"{usuario.id}&{usuario.email}&{usuario.rol}"
         session.add(userdb)
         session.commit()
         session.refresh(userdb)
+        usuario = session.exec(select(Usuario).where(Usuario.email == Usuario.email)).first()
+        secret=f"{usuario.id}&{usuario.email}&{usuario.rol}"
         response.set_cookie(key="secret_key",value=secret,httponly=True,
         secure=False,
         samesite="None"
