@@ -1,4 +1,4 @@
-from fastapi import APIRouter,Depends,Cookie,HTTPException
+from fastapi import APIRouter,Depends,Cookie,HTTPException 
 from sqlmodel import SQLModel , Field , select, Session
 from .Usuario import Usuario 
 from db import get_session
