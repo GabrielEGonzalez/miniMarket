@@ -15,6 +15,10 @@ class Usuario(SQLModel,table=True):
     password: str | None = None
     rol:str | None = None
 
+class UserLogin(SQLModel):
+    email: str
+    password: str
+
 
 userRouter = APIRouter(prefix="/user", tags=["user"])
 
@@ -34,7 +38,7 @@ async def RegisterUser(
         secret=f"{usuario.id}&{usuario.email}&{usuario.rol}"
         response.set_cookie(key="secret_key",value=secret,httponly=True,
         secure=False,
-        samesite="None"
+        samesite="Lax"
         )
         return userdb
     except Exception as e :
@@ -42,7 +46,7 @@ async def RegisterUser(
 
 @userRouter.post("/login")
 async def loginUser(
-    usuariologin: Usuario, 
+    usuariologin: UserLogin, 
     response: Response, 
     session:Session=Depends(get_session)
 ):
@@ -52,7 +56,7 @@ async def loginUser(
             secret = f"{user.id}&{user.email}&{user.rol}"
             response.set_cookie(key="secret_key",value=secret,httponly=True,
             secure=False,  
-            samesite="None")
+            samesite="Lax")
             return user
         else:
             return {"text":"usuario no existen en los registro"}
