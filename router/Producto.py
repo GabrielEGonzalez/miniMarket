@@ -10,7 +10,8 @@ class Producto(SQLModel, table=True):
     stock: int
     estado: int
     descripcion: str
-    
+    url:str
+
 class ProductoRead(SQLModel):
     pass
 
