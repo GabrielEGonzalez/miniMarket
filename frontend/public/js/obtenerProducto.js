@@ -13,7 +13,7 @@ window.onload = function () {
             let button = document.createElement("button");
             let h2precio = document.createElement("h2");
             //img.src = 'https://cdn.iconscout.com/icon/premium/png-256-thumb/producto-terminado-icon-svg-download-png-8634015.png?f=webp';
-            img.src = 'https://holacompras.com/wp-content/uploads/2024/12/ECLP2016.jpg';//`https://ui-avatars.com/api/?name=${producto.nombre}&size=200`;
+            img.src = 'https://images.unsplash.com/photo-1626675431647-2dbf75028ec6?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1033';//`https://ui-avatars.com/api/?name=${producto.nombre}&size=200`;
 
 
             div.classList.add("head-card");
