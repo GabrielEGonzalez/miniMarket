@@ -1,5 +1,5 @@
 let buttonResg = document.getElementById("registrar");
-
+let urlDestino = "http://127.0.0.1:5500/frontend/index.html"; 
 
 buttonResg.addEventListener("click",function(){
     let inputNombre = document.getElementById("nombre");
@@ -17,6 +17,8 @@ buttonResg.addEventListener("click",function(){
             rol:"user"
         })
     }).then(res => res.json())
-    .then(resp =>{console.log(resp);})
+    .then(resp =>{console.log(resp);
+        window.location.href = urlDestino; 
+    })
     .catch(error => console.log(error));
 });
