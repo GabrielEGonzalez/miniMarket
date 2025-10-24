@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, Response, status
+from fastapi import APIRouter, Depends, Response, status , Cookie
 from sqlmodel import Field, SQLModel, create_engine, Session, select , Field
 from db import get_session
 from .Producto import Producto
@@ -7,8 +7,8 @@ from typing import List
 
 class Carrito(SQLModel, table=True):
     id: int | None = Field(default=None,primary_key=True)
-    usuario_id: int 
-    producto_id: int
+    usuario_id: int | None = None
+    producto_id: int 
 
 
 class Carritoread(BaseModel):
@@ -36,9 +36,10 @@ async def getCard(id_user: int, session: Session = Depends(get_session)):
         return {"error": str(e)}
 
 @cardRouter.post("/add/producto")
-async def addProducto(carrito: Carrito , session: Session = Depends(get_session)):
+async def addProducto(carrito: Carrito , session: Session = Depends(get_session), secret_key = Cookie()):
     try:
-
+        key = secret_key.split("&")
+        carrito.usuario_id = key[0]
         db_addCard = Carrito.model_validate(carrito)
         session.add(db_addCard)
         session.commit()
