@@ -4,16 +4,106 @@
 <head>
    <meta charset="UTF-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>Productos</title>
+   <title>Urban Market</title>
+   <link rel="stylesheet" href="../frontend/public/css/index.css">
+   <link rel="stylesheet" href="../frontend/public/css/producto.css">
 </head>
 
 <body>
+   <header>
+      <div class="head">
+         <div> <img src="public/img/logo.png"></div>
+         <div>
+            <h1>Urban Market</h1>
+            <p>Explora, compra y vive la experiencia de la nueva generación de compras online.</p>
+         </div>
 
-   <div class="busqueda">
-      <input type="search" name="busqueda" id="busqueda" />
-      <input type="button" value="enviar" />
+         <div class="regis">
+            <a href="./login.html">Inicio seccion</a>
+            <a href="./registro.html">Registrar</a>
+         </div>
+      </div>
+
+      <nav class="router">
+         <ol>
+            <li><a href="./login.html">Home</a></li>
+            <li><a href="./carrito.html">Carrito</a></li>
+            <li><a href="./producto.html">Productos</a></li>
+            <li><a href="./Contacto.html">Contacto</a></li>
+         </ol>
+      </nav>
+   </header>
+
+   <div class="search-filter">
+      <div class="busqueda">
+         <input type="search" name="busqueda" id="busqueda" />
+      </div>
+      <div class="filter">
+         <h1></h1>
+         <label for="categoria">Categoria:</label>
+         <select name="categoria" id="categoria">
+            <option value="todas">Todas</option>
+            <option value="electronica">Electrónica</option>
+            <option value="ropa">Ropa</option>
+            <option value="hogar">Hogar</option>
+            <option value="deportes">Deportes</option>
+         </select>
+
+         <label for="precio">Precio:</label>
+         <select name="precio" id="precio">
+            <option value="todos">Todos</option>
+            <option value="0-50">0 - 50</option>
+            <option value="51-100">51 - 100</option>
+            <option value="101-200">101 - 200</option>
+            <option value="201-mas">201 o más</option>
+         </select>
+
+         <label for="ordenar">Ordenar por:</label>
+         <select name="ordenar" id="ordenar">
+            <option value="relevancia">Relevancia</option>
+            <option value="precio-asc">Precio: Bajo a Alto</option>
+            <option value="precio-desc">Precio: Alto a Bajo</option>
+            <option value="novedades">Novedades</option>
+         </select>
+      </div>
    </div>
-   
-   
+
+   <main id="contenedor">
+
+   </main>
+   <footer>
+      <div class="footer-content">
+         <div class="head-footer">
+            <div class="head-img">
+               <img src="./public/img/logo.png" alt="logo del Market">
+            </div>
+            <p>Urban Market – Moda sostenible para todos.</p>
+         </div>
+
+
+         <div class="enlaces-rapidos">
+            <h3>Enlaces Rapidos</h3>
+            <a href="">Inicio</a>
+            <a href="">Productos</a>
+            <a href="">FAQ</a>
+            <a href="">Contacto</a>
+         </div>
+
+         <div class="social-media">
+            <h3>Redes Sociales</h3>
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">Correo Electronico</a>
+            <a href="#">TikTok</a>
+         </div>
+      </div>
+
+      <div class="rob-footer">
+         © 2025 Urban Market. Todos los derechos reservados.
+      </div>
+   </footer>
+
+   <script src="./public/js/obtenerProducto.js"></script>
 </body>
+
 </html>
