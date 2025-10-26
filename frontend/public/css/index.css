@@ -214,7 +214,7 @@ li:hover {
 
 /*zona footer background-color: #72a05c;*/
 footer{
-
+    width:100%;
     background-color: #133D00;
     display: flex;
     flex-direction: column;
