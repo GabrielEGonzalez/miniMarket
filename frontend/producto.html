@@ -7,6 +7,8 @@
    <title>Urban Market</title>
    <link rel="stylesheet" href="../frontend/public/css/index.css">
    <link rel="stylesheet" href="../frontend/public/css/producto.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
 </head>
 
 <body>
@@ -36,11 +38,14 @@
 
    <div class="search-filter">
       <div class="busqueda">
-         <input type="search" name="busqueda" id="busqueda" />
+         <div class="input-con-icono">
+            <input type="search" name="busqueda" id="busqueda" placeholder="Buscar..." />
+            <i class="fas fa-search"></i>
+         </div>
       </div>
+         
       <div class="filter">
          <h1>Filtros de Búsqueda</h1>
-
          <div>
             <label for="categoria">Categoria:</label>
             <select name="categoria" id="categoria">
@@ -73,6 +78,7 @@
             </select>
          </div>
       </div>
+   </div>
 
       <main id="contenedor">
 
