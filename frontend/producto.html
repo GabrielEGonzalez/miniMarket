@@ -39,71 +39,78 @@
          <input type="search" name="busqueda" id="busqueda" />
       </div>
       <div class="filter">
-         <h1></h1>
-         <label for="categoria">Categoria:</label>
-         <select name="categoria" id="categoria">
-            <option value="todas">Todas</option>
-            <option value="electronica">Electrónica</option>
-            <option value="ropa">Ropa</option>
-            <option value="hogar">Hogar</option>
-            <option value="deportes">Deportes</option>
-         </select>
+         <h1>Filtros de Búsqueda</h1>
 
-         <label for="precio">Precio:</label>
-         <select name="precio" id="precio">
-            <option value="todos">Todos</option>
-            <option value="0-50">0 - 50</option>
-            <option value="51-100">51 - 100</option>
-            <option value="101-200">101 - 200</option>
-            <option value="201-mas">201 o más</option>
-         </select>
+         <div>
+            <label for="categoria">Categoria:</label>
+            <select name="categoria" id="categoria">
+               <option value="todas">Todas</option>
+               <option value="electronica">Electrónica</option>
+               <option value="ropa">Ropa</option>
+               <option value="hogar">Hogar</option>
+               <option value="deportes">Deportes</option>
+            </select>
+         </div>
 
-         <label for="ordenar">Ordenar por:</label>
-         <select name="ordenar" id="ordenar">
-            <option value="relevancia">Relevancia</option>
-            <option value="precio-asc">Precio: Bajo a Alto</option>
-            <option value="precio-desc">Precio: Alto a Bajo</option>
-            <option value="novedades">Novedades</option>
-         </select>
+         <div>
+            <label for="precio">Precio:</label>
+            <select name="precio" id="precio">
+               <option value="todos">Todos</option>
+               <option value="0-50">0 - 50</option>
+               <option value="51-100">51 - 100</option>
+               <option value="101-200">101 - 200</option>
+               <option value="201-mas">201 o más</option>
+            </select>
+         </div>
+
+         <div>
+            <label for="ordenar">Ordenar por:</label>
+            <select name="ordenar" id="ordenar">
+               <option value="relevancia">Relevancia</option>
+               <option value="precio-asc">Precio: Bajo a Alto</option>
+               <option value="precio-desc">Precio: Alto a Bajo</option>
+               <option value="novedades">Novedades</option>
+            </select>
+         </div>
       </div>
-   </div>
 
-   <main id="contenedor">
+      <main id="contenedor">
 
-   </main>
-   <footer>
-      <div class="footer-content">
-         <div class="head-footer">
-            <div class="head-img">
-               <img src="./public/img/logo.png" alt="logo del Market">
+      </main>
+      
+      <footer>
+         <div class="footer-content">
+            <div class="head-footer">
+               <div class="head-img">
+                  <img src="./public/img/logo.png" alt="logo del Market">
+               </div>
+               <p>Urban Market – Moda sostenible para todos.</p>
             </div>
-            <p>Urban Market – Moda sostenible para todos.</p>
+
+
+            <div class="enlaces-rapidos">
+               <h3>Enlaces Rapidos</h3>
+               <a href="">Inicio</a>
+               <a href="">Productos</a>
+               <a href="">FAQ</a>
+               <a href="">Contacto</a>
+            </div>
+
+            <div class="social-media">
+               <h3>Redes Sociales</h3>
+               <a href="#">Instagram</a>
+               <a href="#">Facebook</a>
+               <a href="#">Correo Electronico</a>
+               <a href="#">TikTok</a>
+            </div>
          </div>
 
-
-         <div class="enlaces-rapidos">
-            <h3>Enlaces Rapidos</h3>
-            <a href="">Inicio</a>
-            <a href="">Productos</a>
-            <a href="">FAQ</a>
-            <a href="">Contacto</a>
+         <div class="rob-footer">
+            © 2025 Urban Market. Todos los derechos reservados.
          </div>
+      </footer>
 
-         <div class="social-media">
-            <h3>Redes Sociales</h3>
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
-            <a href="#">Correo Electronico</a>
-            <a href="#">TikTok</a>
-         </div>
-      </div>
-
-      <div class="rob-footer">
-         © 2025 Urban Market. Todos los derechos reservados.
-      </div>
-   </footer>
-
-   <script src="./public/js/obtenerProducto.js"></script>
+      <script src="./public/js/obtenerProducto.js"></script>
 </body>
 
 </html>
