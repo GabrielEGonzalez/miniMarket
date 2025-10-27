@@ -34,7 +34,7 @@ async def RegisterUser(
         session.add(userdb)
         session.commit()
         session.refresh(userdb)
-        usuario = session.exec(select(Usuario).where(Usuario.email == Usuario.email)).first()
+        usuario = session.exec(select(Usuario).where(Usuario.email == userdb.email)).first()
         secret=f"{usuario.id}&{usuario.email}&{usuario.rol}"
         response.set_cookie(key="secret_key",value=secret,httponly=True,
         secure=False,
