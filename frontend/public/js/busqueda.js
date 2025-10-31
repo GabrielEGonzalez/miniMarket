@@ -19,14 +19,20 @@ search.addEventListener("input", function (e) {
 });
 
 filterPrecio.addEventListener("change", function () {
-  
+
+  let valor = filterPrecio.value;
+  let listaPrecio;
+  if (valor === "todos") {
+        listaPrecio = productos;
+    } else {
     let fill = filterPrecio.value.split('-');
     console.log(fill);
-    let listaPrecio = productos.filter(prod => {
+    listaPrecio = productos.filter(prod => {
       if (fill[0] <= prod.precio && fill[1] >= prod.precio) {
         return prod
       }
     })
+    }
     console.log(listaPrecio);
     mostrarDatos(listaPrecio);
   
